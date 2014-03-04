@@ -1,0 +1,15 @@
+{
+  "name": "tagtree-harmony-episode1",
+  "version": "0.0.1",
+  "description": "a sample project to showcase harmony",
+  "main": "app.js",
+  "dependencies": {
+    "traceur": "0.0.25"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

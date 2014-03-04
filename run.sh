@@ -1,0 +1,1 @@
+node_modules/traceur/traceur  --out es6-app.js --script app.js && node runner.js
