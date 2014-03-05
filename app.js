@@ -1,4 +1,12 @@
-var square = (n) => n * n;
-var nrs = [1,2,3,4,5,6,7,8,9,10];
-var squares = nrs.map(square);
-console.log(squares);
+var hendrik = {
+    name: 'hendrik',
+    friends: [],
+    printFriends: function(){
+        this.friends.forEach(function(f){
+            console.log('%s is friends with %s', this.name, f);
+        });
+    }
+}
+hendrik.friends.push('Frikkie');
+hendrik.friends.push('Frida');
+hendrik.printFriends();
