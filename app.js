@@ -1,6 +1,5 @@
-function searchVehicles(args){
-    var make = args.make, model = args.model, color = args.color;
-    console.log(`searching for vehicles with make ${make}, model ${model} and color ${color}`);
+function searchVehicles({make:mk, model:mdl, color:c}){
+    console.log(`searching for vehicles with make ${mk}, model ${mdl} and color ${c}`);
 }
 
 searchVehicles({make: 'Subaru', model: 'Forester', color: 'Gold'});
