@@ -6,5 +6,7 @@ function getVehicle() {
     engineCapacity: '2.0L'
   };
 }
-var vehicle = getVehicle();
-console.log(("The make is " + vehicle.make + ", and the model is " + vehicle.model));
+var $__0 = getVehicle(),
+    theMake = $__0.make,
+    theModel = $__0.model;
+console.log(("The make is " + theMake + ", and the model is " + theModel));

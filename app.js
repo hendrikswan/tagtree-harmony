@@ -7,7 +7,7 @@ function getVehicle(){
     }
 }
 
-var vehicle = getVehicle();
+var {make: theMake, model: theModel} = getVehicle();
 
-console.log(`The make is ${vehicle.make}, and the model is ${vehicle.model}`);
+console.log(`The make is ${theMake}, and the model is ${theModel}`);
 
