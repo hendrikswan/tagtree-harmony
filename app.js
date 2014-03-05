@@ -1,10 +1,14 @@
-var person =  {
-    name: 'hendrik', 
-    friends: ['Frikkie', 'Frida']
-};
+function getLeaderBoard(){
+    return [
+        'Hendrik',
+        'Frikkie',
+        'Frida',
+        'PersonX',
+        'PersonY'
+    ]
+}
 
-console.log(`${person.name} is friends with the following people:
-     
-     ${person.friends[0]} 
-     
-     ${person.friends[1]}`);
+var board = getLeaderBoard();
+
+console.log(`The current leader is ${board[0]}`);
+
