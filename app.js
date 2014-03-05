@@ -1,18 +1,4 @@
-var hendrik = {
-    name: 'hendrik',
-    friends: [],
-    printFriends(){
-        this.friends.forEach((f)=>{
-            console.log(`${this.name} is friends with 
-
-                            ${f}
-
-                `);
-        });
-    }
-}
-
-hendrik.friends.push('Frikkie');
-hendrik.friends.push('Frida');
-
-hendrik.printFriends();
+var square = (n) => n * n;
+var nrs = [1,2,3,4,5,6,7,8,9,10];
+var squares = nrs.map(square);
+console.log(squares);
