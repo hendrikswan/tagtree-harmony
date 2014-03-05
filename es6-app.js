@@ -1,5 +1,7 @@
 function getLeaderBoard() {
   return ['Hendrik', 'Frikkie', 'Frida', 'PersonX', 'PersonY'];
 }
-var board = getLeaderBoard();
-console.log(("The current leader is " + board[0] + ", and the runner up is " + board[1]));
+var $__0 = getLeaderBoard(),
+    leader = $__0[0],
+    runnerUp = $__0[1];
+console.log(("The current leader is " + leader + ", and the runner up is " + runnerUp));

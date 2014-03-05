@@ -8,7 +8,7 @@ function getLeaderBoard(){
     ]
 }
 
-var board = getLeaderBoard();
+var [leader,runnerUp] = getLeaderBoard();
 
-console.log(`The current leader is ${board[0]}, and the runner up is ${board[1]}`);
+console.log(`The current leader is ${leader}, and the runner up is ${runnerUp}`);
 
