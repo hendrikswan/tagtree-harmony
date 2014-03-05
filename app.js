@@ -2,7 +2,7 @@ var hendrik = {
     name: 'hendrik',
     friends: [],
     printFriends: function(){
-        this.friends.forEach(function(f){
+        this.friends.forEach((f)=>{
             console.log('%s is friends with %s', this.name, f);
         });
     }
