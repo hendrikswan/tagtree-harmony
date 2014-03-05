@@ -1,12 +1,8 @@
-function getVehicle() {
-  return {
-    make: 'Ford',
-    model: 'Focus',
-    color: 'Blue',
-    engineCapacity: '2.0L'
-  };
+function searchVehicles(args) {
+  console.log(("searching for vehicles with make " + args.make + ", model " + args.model + " and color " + args.color));
 }
-var $__0 = getVehicle(),
-    theMake = $__0.make,
-    theModel = $__0.model;
-console.log(("The make is " + theMake + ", and the model is " + theModel));
+searchVehicles({
+  make: 'Subaru',
+  model: 'Forester',
+  color: 'gold'
+});
