@@ -1,7 +1,10 @@
-function getLeaderBoard() {
-  return ['Hendrik', 'Frikkie', 'Frida', 'PersonX', 'PersonY'];
+function getVehicle() {
+  return {
+    make: 'Ford',
+    model: 'Focus',
+    color: 'Blue',
+    engineCapacity: '2.0L'
+  };
 }
-var $__0 = getLeaderBoard(),
-    leader = $__0[0],
-    runnerUp = $__0[1];
-console.log(("The current leader is " + leader + ", and the runner up is " + runnerUp));
+var vehicle = getVehicle();
+console.log(("The make is " + vehicle.make + ", and the model is " + vehicle.model));
