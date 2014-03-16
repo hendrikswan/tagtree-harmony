@@ -1,10 +1,3 @@
-var readline = require('readline');
-
-var rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-
 class Question {
 
   constructor(body){
@@ -12,16 +5,14 @@ class Question {
   }
 
   ask(){
-    rl.question(this.body, function(answer) {
-      console.log("Thank you for your valuable feedback:", answer);
-      rl.close();
-    });
+    console.log(this.body);
   }
 
-  handleAnswer(answer){
-    console.log("Thank you for your valuable feedback:", answer);
+  answer(answer){
+    console.log(`       --${answer}`);
   }
 }
 
 var q = new Question('Have you read idiomatic.js on github?');
 q.ask();
+q.answer('No, but I heard a lot about it!');
