@@ -1,13 +1,15 @@
-var master = 'Hendrik';
+// function log(msg, level='debug'){
+//   console.log(`${level.toUpperCase()}: ${msg}`);
+// }
 
-var doggy = {
-  name: 'Frikkie',
-  master,
-  bark: function(){
-    console.log('whoohoooooo, wheee whhee whooooooo whooooooooooooooooo');
-  },
-  ['tick_count_' + new Date().getTime()]:  Math.floor(Math.random() * 10000)
+// log('hey there you guys!');
+// log('Im really concerned with the state of affairs', 'warn')
+
+
+function log(msg, level, ...args){
+  console.log(`${level.toUpperCase()}: ${msg}`, ...args);
 }
 
-doggy.bark();
-console.log(doggy);
+
+log('Im really concerned with the state of affairs in %s, because of %s', 'warn',
+  'Hout Bay', 'dogs barking')
