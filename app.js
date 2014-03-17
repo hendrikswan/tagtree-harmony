@@ -1,45 +1,14 @@
-class Question {
-  constructor(body){
-    this.body = body;
-  }
+var master = 'Hendrik';
 
-  ask(){
-    console.log('-> ' + this.body);
-  }
-
-  answer(answer){
-    console.log(`       Your answer: ${answer}`);
+var doggy = {
+  name: 'Frikkie',
+  master: master,
+  bark: function(){
+    console.log('whoohoooooo, wheee whhee whooooooo whooooooooooooooooo');
   }
 }
 
+doggy['tick_count_' + new Date().getTime()] = Math.floor(Math.random() * 10000);
 
-class MultiChoiceQuestion extends Question {
-  constructor(body, ...choices){
-    super(body);
-    this.choices = choices;
-  }
-
-  ask() {
-    super();
-    for(var choice of this.choices){
-      console.log( `${this.choices.indexOf(choice) + 1}  - ${choice}`);
-    }
-  }
-
-  answer(answer){
-    answer = this.choices[answer - 1];
-    super(answer);
-  }
-}
-
-var q = new Question('Have you read idiomatic.js on github?');
-q.ask();
-q.answer('No, but I heard a lot about it!');
-
-
-var multiQ = new MultiChoiceQuestion('Which tagtree casts have you watched?',
-  'bla', 'blie');
-multiQ.ask();
-multiQ.answer(1);
-
-
+doggy.bark();
+console.log(doggy);
