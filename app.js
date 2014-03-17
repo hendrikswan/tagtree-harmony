@@ -1,13 +1,19 @@
-var master = 'Hendrik';
+function Question (body){
+  var question = {
+    body: body
+  };
 
-var doggy = {
-  name: 'Frikkie',
-  master,
-  bark(){
-    console.log('whoohoooooo, wheee whhee whooooooo whooooooooooooooooo');
-  },
-  ['tick_count_' + new Date().getTime()]: Math.floor(Math.random() * 10000)
+  question.ask = function(){
+    console.log('-> ' + this.body);
+  }
+
+  question.answer = function(answer){
+    console.log(`       Your answer: ${answer}`);
+  }
+
+  return question;
 }
 
-doggy.bark();
-console.log(doggy);
+var q = new Question('Have you read idiomatic.js on github?');
+q.ask();
+q.answer('No, but I heard a lot about it!');
