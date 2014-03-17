@@ -14,7 +14,7 @@ class Question {
 
 
 class MultiChoiceQuestion extends Question {
-  constructor(body, choices){
+  constructor(body, ...choices){
     super(body);
     this.choices = choices;
   }
@@ -38,7 +38,7 @@ q.answer('No, but I heard a lot about it!');
 
 
 var multiQ = new MultiChoiceQuestion('Which tagtree casts have you watched?',
-  ['bla', 'blie']);
+  'bla', 'blie');
 multiQ.ask();
 multiQ.answer(1);
 
