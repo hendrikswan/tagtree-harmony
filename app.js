@@ -1,19 +1,57 @@
-function Question (body){
-  var question = {
-    body: body
-  };
+class Question{
 
-  question.ask = function(){
+  constructor(body){
+    this.body = body;
+  }
+
+  ask(){
     console.log('-> ' + this.body);
   }
 
-  question.answer = function(answer){
-    console.log(`       Your answer: ${answer}`);
+  answer(answer){
+    console.log(`     Your answer: ${answer}`);
   }
-
-  return question;
 }
 
-var q = new Question('Have you read idiomatic.js on github?');
+class MultiChoiceQuestion extends Question{
+  constructor(body, choices){
+    super(body);
+    this.choices = choices;
+  }
+
+  ask(){
+    super();
+    for(var choice of this.choices){
+      console.log(`${this.choices.indexOf(choice)} - ${choice}`)
+    }
+  }
+
+  answer(answer){
+    var selectedOption = this.choices[answer-1];
+    super(selectedOption);
+  }
+}
+
+
+var q = new MultiChoiceQuestion('Have you watched a tagtree video yet?',
+  ['Yes', 'No', 'Hmm.. not sure']);
 q.ask();
-q.answer('No, but I heard a lot about it!');
+q.answer(3);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
