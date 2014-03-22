@@ -15,8 +15,9 @@ var vehicles = [
   new Vehicle({make: 'Honda',   model: 'PCX 125'})
 ];
 
-function findVehicle({make, model}){
-  for(var v in vehicles){
+export function findVehicle({make, model}){
+  for(var v of vehicles){
+    console.log(v);
     if(v.isMatch(make, model)){
       return v;
     }
