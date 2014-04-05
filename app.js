@@ -1,28 +1,38 @@
 var fs = require('fs');
 var Levenshtein = require('levenshtein');
 
-function* wordMatcher(){
+function wordMatcher(){
   var words = fs.readFileSync('./words').toString().split('\n');
-  for(word of words){
-    var match = {
-      word: word,
-      closest: '',
-      difference: 0
-    };
+  var index = -1;
+  return {
+    next: function(){
+      index++;
+      if(index >= words.length){
+        return {done: true};
+      }
 
-    for(var compareWord of words){
-      if(word == compareWord){
-        continue;
+      var word = words[index];
+
+      var match = {
+        word: word,
+        closest: '',
+        difference: 0
+      };
+
+      for(var compareWord of words){
+        if(word == compareWord){
+          continue;
+        }
+        var distance = new Levenshtein(word, compareWord).distance;
+        if(distance < match.difference || match.difference == 0){
+          match.difference = distance;
+          match.closest = compareWord;
+        }
       }
-      var distance = new Levenshtein(word, compareWord).distance;
-      if(distance < match.difference || match.difference == 0){
-        match.difference = distance;
-        match.closest = compareWord;
-      }
+
+      return {done:false, value: match}
     }
-
-    yield match;
-  }
+  };
 }
 
 var matcher = wordMatcher();
